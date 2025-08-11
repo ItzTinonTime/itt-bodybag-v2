@@ -1,0 +1,69 @@
+-------------------------------------
+-------------------------------------
+--            BodyBag              --
+--                                 --
+--          Copyright by           --
+-- Florian 'ItzTinonTime' Reinertz --
+-------------------------------------
+-------------------------------------
+
+-------------------------------------
+--         LOAD | BodyBag          --
+-------------------------------------
+
+BodyBag = BodyBag or {}
+BodyBag.Language = BodyBag.Language or {}
+
+-- Code from: https://wiki.facepunch.com/gmod/Global.include
+local rootDirectory = "bodybag"
+
+local function AddFile( File, directory )
+	local prefix = string.lower( string.Left( File, 3 ) )
+	local langPrefix = string.lower( string.Left( File, 5 ))
+
+	if SERVER and prefix == "sv_" then
+		include( directory .. File )
+		print( "[AUTOLOAD] SERVER INCLUDE: " .. File )
+	elseif prefix == "sh_" then
+		if SERVER then
+			AddCSLuaFile( directory .. File )
+			print( "[AUTOLOAD] SHARED ADDCS: " .. File )
+		end
+		include( directory .. File )
+		print( "[AUTOLOAD] SHARED INCLUDE: " .. File )
+	elseif prefix == "cl_" then
+		if SERVER then
+			AddCSLuaFile( directory .. File )
+			print( "[AUTOLOAD] CLIENT ADDCS: " .. File )
+		elseif CLIENT then
+			include( directory .. File )
+			print( "[AUTOLOAD] CLIENT INCLUDE: " .. File )
+		end
+	elseif langPrefix == "lang_" then
+		if SERVER then
+			AddCSLuaFile(directory .. File)
+			print("[AUTOLOAD] LANGUAGE ADDCS: " .. File)
+		end
+		include( directory .. File )
+		print( "[AUTOLOAD] LANGUAGE INCLUDE: " .. File )
+	end
+end
+
+local function IncludeDir( directory )
+	directory = directory .. "/"
+
+	local files, directories = file.Find( directory .. "*", "LUA" )
+
+	for _, v in ipairs( files ) do
+		if string.EndsWith( v, ".lua" ) then
+			AddFile( v, directory )
+		end
+	end
+
+	for _, v in ipairs( directories ) do
+		print( "[AUTOLOAD] Directory: " .. v )
+		IncludeDir( directory .. v )
+	end
+end
+
+IncludeDir( rootDirectory )
