@@ -74,6 +74,13 @@ function BodyBag:CloseMenu()
     end
 end
 
+--- Format time in seconds to MM:SS
+-- @param secs number
+local function formatTime(secs)
+    secs = math.max(0, math.floor(secs or 0))
+    return string.format("%02d:%02d", math.floor(secs/60), secs%60)
+end
+
 -- Open crematorium menu.
 -- @param entity Forwarding of the entities currently in use.
 -- @param table Data that must already be displayed in the menu.
@@ -165,11 +172,25 @@ function BodyBag:OpenMenu(entity, bodies)
     burn:SetWide(width * 0.45)
     burn:SetText("")
     burn.Paint = function(me, w, h)
-        local c = me:IsHovered() and Color(255, 0, 0) or COL_BTN_STOP
-        draw.RoundedBox(6, 0, 0, w, h, c)
-        draw.SimpleText(BodyBag:GetLangString("frame_burnall") or "Burn all", "BodyBag.Faction", w/2, h/2, COL_WHITE, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+        local untilTime = IsValid(entity) and entity:GetNWFloat("BurnUntil", 0) or 0
+        local remaining = math.max(0, math.ceil(untilTime - CurTime()))
+        local disabled  = remaining > 0
+
+        local baseCol = disabled and Color(120,120,120) or (me:IsHovered() and Color(255, 0, 0) or COL_BTN_STOP)
+        draw.RoundedBox(6, 0, 0, w, h, baseCol)
+
+        local label = BodyBag:GetLangString("frame_burnall") or "Burn all"
+        if disabled then label = label .. " (" .. formatTime(remaining) .. ")" end
+
+        draw.SimpleText(label, "BodyBag.Faction", w/2, h/2, COL_WHITE, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
     end
     burn.DoClick = function()
+        local untilTime = IsValid(entity) and entity:GetNWFloat("BurnUntil", 0) or 0
+        if untilTime > CurTime() then
+            surface.PlaySound("buttons/button10.wav") -- kurzer Fehlerpiep
+            return
+        end
+
         net.Start("BodyBag.TriggerBurnAll")
             net.WriteEntity(entity)
         net.SendToServer()

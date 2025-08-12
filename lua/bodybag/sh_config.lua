@@ -24,6 +24,9 @@ BodyBag.Config.FireSoundVolume = 0.6
 -- Sound level (SNDLVL) for attenuation, 60-75 ist ok
 BodyBag.Config.FireSoundLevel = 70
 
+-- How long do we have to wait before we can burn the bodies again?
+BodyBag.Config.BurnAllCooldown = 300
+
 -- Bodybag model
 -- Default: "models/props_misc/bodybag/bodybag_fox.mdl" from
 -- https://steamcommunity.com/workshop/filedetails/?id=2559515043

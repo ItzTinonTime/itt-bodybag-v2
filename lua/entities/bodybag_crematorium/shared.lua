@@ -21,7 +21,7 @@ ENT.AdminOnly = false
 function ENT:Initialize()
     self.storedBodies = {}
 
-    if util.IsValidModel(self.WorldModel) then
+    if util.IsValidModel(BodyBag.Config.EntityModel) then
         self:SetModel(BodyBag.Config.EntityModel or "models/niksacokica/construction/construction_storage_compactor_01.mdl")
     else
         self:SetModel("models/props_wasteland/kitchen_stove001a.mdl")

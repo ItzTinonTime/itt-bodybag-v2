@@ -18,4 +18,5 @@ BodyBag.Language["de"] = {
     ["frame_storeall"] = "Alle einlagern",
     ["bodies_stored"] = "Alle Leichen im Umkreis wurden eingelagert.",
     ["no_bodies"] = "Keine Leichen im Krematorium.",
+    ["burn_cooldown"] = "Bitte warte %s Sekunden, bevor du die Leichen erneut verbrennen kannst.",
 }

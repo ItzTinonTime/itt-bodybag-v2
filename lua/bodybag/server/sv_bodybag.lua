@@ -90,6 +90,16 @@ net.Receive("BodyBag.TriggerBurnAll", function(_, ply)
     local ENT = net.ReadEntity()
     if not isAllowed(ply, ENT, BodyBag.Config.EmitFireSoundRadius) then return end
 
+    -- Check cooldown.
+    ENT._nextBurnAll = ENT._nextBurnAll or 0
+    if ENT._nextBurnAll > CurTime() then
+        local remaining = math.ceil(ENT._nextBurnAll - CurTime())
+        ply:ChatPrint(BodyBag:GetLangString("burn_cooldown", remaining))
+        return
+    end
+    ENT._nextBurnAll = CurTime() + (BodyBag.Config.BurnAllCooldown or 0)
+    ENT:SetNWFloat("BurnUntil", ENT._nextBurnAll)
+
     ENT.storedBodies = ENT.storedBodies or {}
     table.Empty(ENT.storedBodies)
 
