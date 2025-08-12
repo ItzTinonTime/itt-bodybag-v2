@@ -15,6 +15,7 @@ BodyBag = BodyBag or {}
 BodyBag.Language = BodyBag.Language or {}
 
 -- Code from: https://wiki.facepunch.com/gmod/Global.include
+-- Edited
 local rootDirectory = "bodybag"
 
 local function AddFile( File, directory )
