@@ -12,8 +12,8 @@ Just Drag and Drop the folder into `garrysmod/addons/`.
 Edit sh_config.lua. 
 
 Content is needed:
- - https://steamcommunity.com/sharedfiles/filedetails/?id=3066692687 for the bodybag model
- - https://steamcommunity.com/sharedfiles/filedetails/?id=2102911039 for crematorium model
+ - [https://steamcommunity.com/sharedfiles/filedetails/?id=3066692687](https://steamcommunity.com/sharedfiles/filedetails/?id=2559515043) for the bodybag model
+ - [https://steamcommunity.com/sharedfiles/filedetails/?id=2102911039](https://steamcommunity.com/sharedfiles/filedetails/?id=2102911039) for crematorium model
 
 Note: You can specify alternative models in sh_config.lua.
 
