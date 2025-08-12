@@ -1,7 +1,7 @@
 # itt-bodybag-v2
 Bodybag and crematorium system.
 
-## Inhaltsverzeichnis
+## Table of contents
 - [Installation + Requirements](#installation--requirements)
 - [License](#license)
 - [Credits](#credits)
