@@ -187,7 +187,7 @@ function BodyBag:OpenMenu(entity, bodies)
     burn.DoClick = function()
         local untilTime = IsValid(entity) and entity:GetNWFloat("BurnUntil", 0) or 0
         if untilTime > CurTime() then
-            surface.PlaySound("buttons/button10.wav") -- kurzer Fehlerpiep
+            surface.PlaySound("buttons/button10.wav")
             return
         end
 
