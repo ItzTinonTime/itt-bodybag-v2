@@ -11,7 +11,7 @@
 BodyBag.Config = {}
 
 -- Language: de, en, fr
-BodyBag.Config.SetLanguage = "de"
+BodyBag.Config.SetLanguage = "en"
 
 -- Crematorium entity model
 -- Default: "models/niksacokica/construction/construction_storage_compactor_01.mdl" from 

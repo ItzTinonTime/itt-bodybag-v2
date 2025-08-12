@@ -18,7 +18,7 @@ SWEP.Instructions   = "LEFT: put a ragdoll into a bodybag."
 SWEP.Slot           = 5
 SWEP.SlotPos        = 0
 SWEP.DrawAmmo       = false
-SWEP.Category       = "Tinon's stuff"
+SWEP.Category       = "Bodybag System"
 
 SWEP.Spawnable      = true
 SWEP.AdminOnly      = false

@@ -11,7 +11,7 @@ ENT.Type = "anim"
 ENT.Base = "base_gmodentity"
 
 ENT.PrintName = "Crematorium"
-ENT.Category = "NOVA"
+ENT.Category = "Bodybag System"
 ENT.Author = "ItzTinonTime"
 ENT.Purpose = ""
 
