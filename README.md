@@ -3,7 +3,7 @@ Bodybag and crematorium system.
 
 ## Inhaltsverzeichnis
 - [Installation + Requirements](#installation--requirements)
-- [License](#License)
+- [License](#license)
 - [Credits](#credits)
 
 ## Installation + Requirements
