@@ -2,12 +2,11 @@
 Bodybag and crematorium system.
 
 ## Inhaltsverzeichnis
-- [Installation](#installation)
-- [Requirements](#benutzung)
+- [Installation + Requirements](#installation)
 - [License](#lizenz)
 - [Credits](#credits)
 
-### Installation
+### Installation + Requirements
 Just Drag and Drop the folder into `garrysmod/addons/`.
 
 Edit sh_config.lua. 
@@ -19,10 +18,6 @@ Content is needed:
 Note: You can specify alternative models in sh_config.lua.
 
 Done.
-
-### Requirements
-Nothing extra
-
 ## License
 See LICENSE.txt for usage terms. In short: Free to use on your own servers, 
 but redistribution, public publication, or re-upload without permission is prohibited.
