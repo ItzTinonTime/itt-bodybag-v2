@@ -13,7 +13,7 @@
 -- @param maxDist number
 local function isAllowed(ply, ent, maxDist)
     if not IsValid(ply) or not ply:IsPlayer() then return false end
-    if not IsValid(ent) then return false end
+    if not IsValid(ent) or ent:GetClass() ~= "bodybag_crematorium" then return end
     if maxDist and maxDist > 0 then
         if ply:GetPos():DistToSqr(ent:GetPos()) > (maxDist * maxDist) then
             return false
@@ -54,8 +54,8 @@ function BodyBag:CreateBodyBag(ragdoll, target)
     local phys = bag:GetPhysicsObject()
     if IsValid(phys) then phys:Wake() end
 
-    -- Optional: Respawn a dead player that was bagged
-    if IsValid(target) and target:IsPlayer() and not target:Alive() then
+    -- Respawn a dead player that was bagged
+    if IsValid(target) and target:IsPlayer() and not target:Alive() and BodyBag.Config.RespawnOnBag then
         target:Spawn()
         PrintMessage(HUD_PRINTTALK, target:Nick() .. " respawned because they were placed in a body bag.")
     end
@@ -113,17 +113,20 @@ net.Receive("BodyBag.TriggerBurnAll", function(_, ply)
     end
 
     -- Play/stop fire loop for players in radius
-    local radius = BodyBag.Config.EmitFireSoundRadius or 512
-    local nearby = ents.FindInSphere(entPos, radius)
+    local radius  = BodyBag.Config.EmitFireSoundRadius or 512
+    local level   = BodyBag.Config.FireSoundLevel or 70
+    local volume  = BodyBag.Config.FireSoundVolume or 0.6
 
-    for _, p in ipairs(nearby) do
+    for _, p in ipairs(ents.FindInSphere(entPos, radius)) do
         if IsValid(p) and p:IsPlayer() then
-            p:EmitSound("ambient/fire/fire_big_loop1.wav", 75, 100, 1, CHAN_AUTO)
+            -- EmitSound(name, level, pitch, volume, channel)
+            p:EmitSound("ambient/fire/fire_big_loop1.wav", level, 100, volume, CHAN_AUTO)
         end
     end
 
+    -- Stop loop after 10s (re-scan sphere to include late joiners)
     timer.Simple(10, function()
-        for _, p in ipairs(nearby) do
+        for _, p in ipairs(ents.FindInSphere(entPos, radius)) do
             if IsValid(p) and p:IsPlayer() then
                 p:StopSound("ambient/fire/fire_big_loop1.wav")
             end

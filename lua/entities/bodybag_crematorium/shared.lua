@@ -18,13 +18,11 @@ ENT.Purpose = ""
 ENT.Spawnable = true
 ENT.AdminOnly = false
 
-ENT.WorldModel = BodyBag.Config.EntityModel or "models/niksacokica/construction/construction_storage_compactor_01.mdl"
-
 function ENT:Initialize()
     self.storedBodies = {}
 
     if util.IsValidModel(self.WorldModel) then
-        self:SetModel(self.WorldModel)
+        self:SetModel(BodyBag.Config.EntityModel or "models/niksacokica/construction/construction_storage_compactor_01.mdl")
     else
         self:SetModel("models/props_wasteland/kitchen_stove001a.mdl")
     end

@@ -16,6 +16,6 @@ BodyBag.Language["en"] = {
     ["frame_burn"] = "Burn",
     ["frame_burnall"] = "Burn all",
     ["frame_storeall"] = "Store all",
-    ["bodies_stored"] = "Store all the bodies in the radius",
+    ["bodies_stored"]  = "All nearby bodies have been stored.",
     ["no_bodies"] = "No bodies in the crematorium.",
 }

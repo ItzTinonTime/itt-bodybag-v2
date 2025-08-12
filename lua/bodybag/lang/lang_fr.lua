@@ -8,7 +8,7 @@
 -------------------------------------
 
 -------------------------------------
---        LANGUAGE | FRENSH        --
+--        LANGUAGE | FRENCH        --
 -------------------------------------
 
 BodyBag.Language["fr"] = {
@@ -16,6 +16,6 @@ BodyBag.Language["fr"] = {
     ["frame_burn"] = "Brûler",
     ["frame_burnall"] = "Brûler tout",
     ["frame_storeall"] = "Stocker tout",
-    ["bodies_stored"] = "Enregistrer tous les corps dans le radius",
+    ["bodies_stored"]  = "Tous les corps à proximité ont été stockés.",
     ["no_bodies"] = "Pas de cadavres au crématorium.",
 }

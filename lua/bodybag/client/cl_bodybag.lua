@@ -205,7 +205,7 @@ end
 
 -- Networking because we are using ENT:Use on server.
 net.Receive("BodyBag.OpenMenu", function()
-    local ent   = net.ReadEntity()
-    local bodies= net.ReadTable() or {}
+    local ent    = net.ReadEntity()
+    local bodies = net.ReadTable() or {}
     BodyBag:OpenMenu(ent, bodies)
 end)

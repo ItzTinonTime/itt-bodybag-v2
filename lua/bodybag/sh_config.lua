@@ -18,10 +18,19 @@ BodyBag.Config.SetLanguage = "de"
 -- https://steamcommunity.com/sharedfiles/filedetails/?id=2102911039
 BodyBag.Config.EntityModel = "models/niksacokica/construction/construction_storage_compactor_01.mdl"
 
+-- Volume for the fire loop [0..1]
+BodyBag.Config.FireSoundVolume = 0.6
+
+-- Sound level (SNDLVL) for attenuation, 60-75 ist ok
+BodyBag.Config.FireSoundLevel = 70
+
 -- Bodybag model
 -- Default: "models/props_misc/bodybag/bodybag_fox.mdl" from
 -- https://steamcommunity.com/workshop/filedetails/?id=2559515043
 BodyBag.Config.Model = "models/props_misc/bodybag/bodybag_fox.mdl"
+
+-- Should the player be respawned after getting bagged
+BodyBag.Config.RespawnOnBag = false
 
 -- Search radius for corpses.
 -- Needed for crematorium.
