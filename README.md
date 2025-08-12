@@ -2,11 +2,11 @@
 Bodybag and crematorium system.
 
 ## Inhaltsverzeichnis
-- [Installation + Requirements](#installation)
-- [License](#lizenz)
+- [Installation + Requirements](#Installation + Requirements)
+- [License](#License)
 - [Credits](#credits)
 
-### Installation + Requirements
+## Installation + Requirements
 Just Drag and Drop the folder into `garrysmod/addons/`.
 
 Edit sh_config.lua. 
@@ -24,5 +24,5 @@ but redistribution, public publication, or re-upload without permission is prohi
 Please contact f.reinertz@proximus.be for permissions or more details.
 Alternative contact option discord: itztinontime
 
-### Credits
+## Credits
 Thanks to everyone who helped me.
