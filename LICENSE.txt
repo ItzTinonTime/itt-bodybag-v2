@@ -1,0 +1,23 @@
+Copyright (c) 2025 Florian "ItzTinonTime" Reinertz
+
+Permission is hereby granted to any individual or organization to use and modify
+this software for operation on their own Garry's Mod servers, for both personal
+and commercial purposes, subject to the following conditions:
+
+1. Redistribution of this software, in original or modified form, is prohibited
+   without the prior express written permission of the copyright holder.
+
+2. Publishing this software, in whole or in part, on public repositories,
+   file sharing services, or similar platforms is prohibited without permission.
+
+3. Re-uploading this software, in whole or in part, to the Steam Workshop or
+   any equivalent content distribution platform is prohibited without permission.
+
+4. Claiming authorship of this software, in whole or in part, is strictly prohibited.
+
+5. This notice shall be included in all copies or substantial portions of the Software
+   that are lawfully redistributed with permission.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE AND NONINFRINGEMENT.
