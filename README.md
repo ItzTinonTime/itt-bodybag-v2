@@ -9,11 +9,15 @@ Bodybag and crematorium system.
 
 ### Installation
 Just Drag and Drop the folder into `garrysmod/addons/`.
+
 Edit sh_config.lua. 
+
 Content is needed:
  - https://steamcommunity.com/sharedfiles/filedetails/?id=3066692687 for the bodybag model
  - https://steamcommunity.com/sharedfiles/filedetails/?id=2102911039 for crematorium model
+
 Note: You can specify alternative models in sh_config.lua.
+
 Done.
 
 ### Requirements
